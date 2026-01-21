@@ -1,0 +1,25 @@
+{
+  "name": "poo-viii",
+  "version": "1.0.0",
+  "description": "",
+  "src": "index.ts",
+  "scripts": {
+    "start": "parcel ./src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MateusARJ/POO-VIII.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MateusARJ/POO-VIII/issues"
+  },
+  "homepage": "https://github.com/MateusARJ/POO-VIII#readme",
+  "dependencies": {
+    "parcel": "^2.16.3"
+  }
+}
