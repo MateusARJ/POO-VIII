@@ -1,0 +1,45 @@
+@startuml diagrama
+title Sistema de Controle de Vendas - Loja de Bombons
+
+interface IProduto {
+  +nome: string
+  +preco: number
+}
+
+class Produto {
+  +id: number
+  +nome: string
+  +preco: number
+}
+
+class ItemVenda {
+  +produto: Produto
+  +quantidade: number
+  +getSubtotal(): number
+}
+
+class Venda {
+  -itens: ItemVenda[]
+  +id: number
+  +adicionarItem(item: ItemVenda): void
+  +listarItens(): ItemVenda[]
+  +calcularTotal(): number
+}
+
+class Loja {
+  -produtos: Produto[]
+  -vendas: Venda[]
+  +cadastrarProduto(produto: Produto): void
+  +listarProdutos(): Produto[]
+  +criarVenda(): Venda
+  +adicionarItemNaVenda(venda: Venda, produto: Produto, quantidade: number): void
+  +listarVendas(): Venda[]
+}
+
+Produto ..|> IProduto
+ItemVenda --> Produto : usa
+Venda "1" -- "1" ItemVenda : contém
+Loja "1" -- "0" Produto : gerencia
+Loja "1" -- "0" Venda : registra
+
+@enduml
